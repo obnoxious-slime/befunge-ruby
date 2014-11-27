@@ -88,22 +88,3 @@ class BefungeInterpreterAnimation < BefungeInterpreter
   end
 end
 
-# TODO: animation mode, and debugging mode
-AVAILABLE_FLAGS = %w(-d -a)
-
-if __FILE__ == $PROGRAM_NAME
-  filename = ARGV[0]
-  flags = ARGV[1..-1]
-  flags ||= []
-  flags.each { |flag| raise 'Fuck you' unless AVAILABLE_FLAGS.include?(flag) }
-
-  if flags.include?('-a')
-    klass = BefungeInterpreterAnimation
-  elsif flags.include?('-d')
-    klass = BefungeInterpreterDebugger
-  else
-    klass = BefungeInterpreter
-  end
-
-  klass.new(filename, flags).interpret
-end
