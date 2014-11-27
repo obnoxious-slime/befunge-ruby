@@ -8,14 +8,14 @@ Deatailed Information [here.](http://esolangs.org/wiki/befunge)
 
 ```
 gem install befunge_ruby
-befunge__ruby some_file.bf
+befunge some_file.bf
 ```
 
 Pass the -a flag for animation mode
 
-```befunge\_ruby some_file.bf -a```
+```befunge some_file.bf -a```
 
 Pass the -d flag for debugging mode
 
-```befunge/_ruby some_file.bf -d```
+```befunge some_file.bf -d```
 

@@ -1,4 +1,8 @@
-require './lib/befunge_ruby.rb'
+require './lib/pointer.rb'
+require './lib/code_map.rb'
+require './lib/operations.rb'
+require './lib/stack.rb'
+require './lib/befunge_interpreter.rb'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
