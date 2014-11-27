@@ -2,7 +2,6 @@
 
 require './lib/operations.rb'
 require './lib/code_map.rb'
-require './lib/position.rb'
 require './lib/pointer.rb'
 require './lib/stack.rb'
 require 'colorize'

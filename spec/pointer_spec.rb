@@ -16,7 +16,8 @@ describe Pointer do
 
   describe 'position' do
     it 'should have a position' do
-      expect(@pointer.instance_variable_get(:@position).class).to eq(Position)
+      expect(@pointer.instance_variable_get(:@x)).to_not eq(nil)
+      expect(@pointer.instance_variable_get(:@y)).to_not eq(nil)
     end
 
     it 'has getters for position' do

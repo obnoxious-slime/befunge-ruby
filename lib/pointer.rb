@@ -1,7 +1,7 @@
 # This class is responsible for keeping track of it's location on the
 # code map and moving in a direction every iteration.
 class Pointer
-  attr_accessor :direction, :trampoline
+  attr_accessor :direction, :trampoline, :x, :y
   DIRECTIONS = [:w, :e, :n, :s]
   DIRECTIONS_MAP = Hash[DIRECTIONS.zip(
     [
@@ -10,33 +10,17 @@ class Pointer
 
   def initialize(direction = :e)
     @direction = direction
-    @position = Position.new
+    @x, @y = 0, 0
     @trampoline = false
   end
 
   def step
     diff = DIRECTIONS_MAP[@direction]
     multiplier = @trampoline ? 2 : 1
-    @position.x += diff.first * multiplier
-    @position.y += diff.last * multiplier
-    @position.x %= 80
-    @position.y %= 20
+    self.x = x + diff.first * multiplier
+    self.y = y + diff.last * multiplier
+    self.x = x % 80
+    self.y = y % 20
     @trampoline = false
-  end
-
-  def x
-    @position.x
-  end
-
-  def y
-    @position.y
-  end
-
-  def x=(arg)
-    @position.x = arg
-  end
-
-  def y=(arg)
-    @position.y = arg
   end
 end
