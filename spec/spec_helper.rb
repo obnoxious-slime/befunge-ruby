@@ -1,4 +1,4 @@
-require './lib/befunge.rb'
+require './lib/befunge_ruby.rb'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
